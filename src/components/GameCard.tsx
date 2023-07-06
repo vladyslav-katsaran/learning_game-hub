@@ -12,18 +12,18 @@ interface Props {
 function GameCard({ game }: Props) {
   return (
     <>
-        <Card>
-          <Image src={getCroppedImageUrl(game.background_image)} />
-          <CardBody>
-            <Heading size={"lg"}>{game.name}</Heading>
-            <HStack justifyContent={"space-between"}>
-              <PlatformIconList
-                platforms={game.parent_platforms.map((p) => p.platform)}
-              />
-              <CriticScore score={game.metacritic} />
-            </HStack>
-          </CardBody>
-        </Card>
+      <Card>
+        <Image src={getCroppedImageUrl(game.background_image)} />
+        <CardBody>
+          <HStack justifyContent={"space-between"} marginBottom={3}>
+            <PlatformIconList
+              platforms={game.parent_platforms.map((p) => p.platform)}
+            />
+            <CriticScore score={game.metacritic} />
+          </HStack>
+          <Heading size={"lg"}>{game.name}</Heading>
+        </CardBody>
+      </Card>
     </>
   );
 }
